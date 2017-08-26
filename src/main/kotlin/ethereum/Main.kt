@@ -61,7 +61,7 @@ fun File.checkFields(mandatoryFields: List<String>, optionalFields: List<String>
             minimalJSONArray.add(minimalJsonObject)
         }
 
-        File("output").mkdir()
-        File("output", name.replace(".json", ".min.json")).writeText(minimalJSONArray.toJsonString())
+        File("build/output").mkdirs()
+        File("build/output", name.replace(".json", ".min.json")).writeText(minimalJSONArray.toJsonString())
     }
 }
